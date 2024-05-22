@@ -32,7 +32,7 @@ jobs:
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
       - name: Build and Push Image
         run: |
-          docker build -t kimyoungwoo613/grayround:${{ env.NEW_VERSION }} websource
+          docker build -t kimyoungwoo613/grayround:${{ env.NEW_VERSION }} ./websource
           docker push codingalice/grayhound:${{ env.NEW_VERSION }}
       - name: Update deploy.yaml
         run: |
