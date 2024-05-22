@@ -33,7 +33,7 @@ jobs:
       - name: Build and Push Image
         run: |
           docker build -t kimyoungwoo613/grayround:${{ env.NEW_VERSION }} .
-          docker push codingalice/grayhound:${{ env.NEW_VERSION }}
+          docker push kimyoungwoo613/grayround:${{ env.NEW_VERSION }}
       - name: Update deploy.yaml
         run: |
           sed -i 's|image: kimyoungwoo613/grayround:.*|image: kimyoungwoo613/grayround:${{ env.NEW_VERSION }}|' websource/deploy.yaml
