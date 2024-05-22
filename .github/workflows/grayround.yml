@@ -36,7 +36,7 @@ jobs:
           docker push codingalice/grayhound:${{ env.NEW_VERSION }}
       - name: Update deploy.yaml
         run: |
-          sed -i 's|image: codingalice/grayhound:.*|image: kimyoungwoo613/grayround:${{ env.NEW_VERSION }}|' websource/deploy.yaml
+          sed -i 's|image: kimyoungwoo613/grayround:.*|image: kimyoungwoo613/grayround:${{ env.NEW_VERSION }}|' websource/deploy.yaml
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions"
